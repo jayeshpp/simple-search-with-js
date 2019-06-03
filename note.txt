@@ -1,0 +1,10 @@
+UI :
+    Search box
+    Search Result box
+    No Result Screen
+
+BE  :
+    Search/Filter data
+    Handle Keyboard Navigation
+    Render UI
+
