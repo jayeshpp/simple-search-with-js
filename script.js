@@ -35,7 +35,8 @@ var Search = (()=>{
 
     var matchString = (string) => {
         if(inputValue.length === 0) return false;
-        return string.toLowerCase().match(inputValue.toLowerCase());
+		var re = new RegExp(inputValue, 'gi');
+        return string.match(re);
     }
 
     var handleEvents = (event) => {
@@ -97,7 +98,9 @@ var Search = (()=>{
     }
 
     var highlightString = (text) => {
-         return text.replace(inputValue,"<span class='highlight'>"+inputValue+"</span>")
+        var re = new RegExp(inputValue, 'gi');
+        var newText = text.match(re);
+        return text.replace(newText,"<span class='highlight'>"+newText+"</span>")
     }
 
     var siblings = (elem) => {
